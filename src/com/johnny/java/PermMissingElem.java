@@ -1,6 +1,7 @@
 package com.johnny.java;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.stream.IntStream;
 
 /**
@@ -47,9 +48,22 @@ public class PermMissingElem {
     }
 
     public int solutionC(int[] A) {
+        //THE BEST!!!!
         int result = A.length + 1;
         for (int i = 0; i < A.length; i++) {
             result = result - A[i] + i + 1;
+        }
+        return result;
+    }
+
+    public int solutionD(int[] A){
+        HashSet<Integer> set = new HashSet<>();
+        int result =1;
+        for (int i = 0; i < A.length; i++) {
+            set.add(A[i]);
+        }
+        while(set.contains(result)){
+            result++;
         }
         return result;
     }
