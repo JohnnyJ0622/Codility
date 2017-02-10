@@ -58,11 +58,11 @@ public class PermMissingElem {
 
     public int solutionD(int[] A){
         HashSet<Integer> set = new HashSet<>();
-        int result =1;
+        int result = 1;
         for (int i = 0; i < A.length; i++) {
             set.add(A[i]);
         }
-        while(set.contains(result)){
+        while (set.contains(result)) {
             result++;
         }
         return result;

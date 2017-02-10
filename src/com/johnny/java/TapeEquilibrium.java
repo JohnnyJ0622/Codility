@@ -46,7 +46,7 @@ public class TapeEquilibrium {
         int total = 0;
         int sum1 = 0;
         int sum2 = IntStream.of(A).sum();
-        for (int i = 0; i < A.length-1; i++) {
+        for (int i = 0; i < A.length - 1; i++) {
             sum1 = sum1 + A[i];
             total = Math.abs(sum1 * 2 - sum2);
             if (total < result) {

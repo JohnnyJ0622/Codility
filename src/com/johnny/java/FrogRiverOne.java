@@ -1,7 +1,6 @@
 package com.johnny.java;
 
 import java.util.HashMap;
-import java.util.concurrent.ForkJoinPool;
 
 /**
  * Created by Johnny on 2/10/2017.
@@ -16,10 +15,10 @@ public class FrogRiverOne {
     }
 
     public int solution(int X, int[] A) {
-        HashMap<Integer,Integer> map = new HashMap<>();
+        HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < A.length; i++) {
             map.put(A[i], 0);
-            if (map.size() == X){
+            if (map.size() == X) {
                 return i;
             }
         }
