@@ -14,7 +14,7 @@ public class PermMissingElem {
         long startTime = System.currentTimeMillis();
         System.out.println(p.solutionC(A));
         long endTime = System.currentTimeMillis();
-        System.out.println("程序运行时间： " + (endTime - startTime) + "ms");
+        System.out.println("Running time： " + (endTime - startTime) + "ms");
 //        for (int i = 0; i < 10000; i++) {
 //            System.out.print(i + ", ");
 //        }
