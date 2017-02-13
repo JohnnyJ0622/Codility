@@ -7,10 +7,10 @@ import java.util.Arrays;
  */
 public class NumberOfDiscIntersections {
     public static void main(String[] args) {
-        int[] a = {1, 1, 1, 1};
+        int[] a = {1, 2147483647, 0};
         NumberOfDiscIntersections n = new NumberOfDiscIntersections();
         System.out.println(n.solution(a));
-        System.out.println(n.solution(a));
+        System.out.println(n.solutionB(a));
     }
 
     public int solution(int[] A) {
@@ -35,6 +35,21 @@ public class NumberOfDiscIntersections {
             if (result > 10000000) return -1;
         }
 
+        return result;
+    }
+
+    //O(N*N) Low Performance.
+    public int solutionB(int[] A) {
+        int result = 0;
+        for (int i = 0; i < A.length - 1; i++) {
+            for (int k = i + 1; k < A.length; k++) {
+                if (i + (long) A[i] >= k) {
+                    result = result + 1;
+                } else if (i + (long) A[i] >= k - (long) A[k]) {
+                    result++;
+                }
+            }
+        }
         return result;
     }
 }
