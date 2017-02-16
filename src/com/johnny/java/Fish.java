@@ -7,10 +7,10 @@ import java.util.Stack;
  */
 public class Fish {
     public static void main(String[] args) {
-//        int[] a = {4, 3, 2, 1, 5, 9, 8, 11, 10, 6, 7};
-//        int[] b = {1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0};
-        int[] a = {4, 3, 2, 1, 5};
-        int[] b = {0, 1, 0, 0, 0};
+        int[] a = {4, 3, 2, 1, 5, 9, 8, 11, 10, 6, 7};
+        int[] b = {1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0};
+//        int[] a = {4, 3, 2, 1, 5};
+//        int[] b = {0, 1, 0, 0, 0};
 
         Fish f = new Fish();
         System.out.println(f.solution(a, b));
@@ -36,6 +36,12 @@ public class Fish {
                         stack.peek()[1] != B[i]) {
                     stack.pop();
                 }
+                if (stack.isEmpty()
+                        || (stack.peek()[0] <= A[i]
+                        || stack.peek()[1] == B[i])) {
+                    stack.push(temp);
+                }
+                /*
                 if (!stack.isEmpty()
                         && stack.peek()[0] > A[i]
                         && stack.peek()[1] != B[i]) {
@@ -43,6 +49,7 @@ public class Fish {
                 } else {
                     stack.push(temp);
                 }
+                */
             } else if (stack.peek()[1] == B[i]) {
                 stack.push(temp);
             }
