@@ -1,5 +1,7 @@
 package com.johnny.java;
 
+import java.util.Arrays;
+
 /**
  * Created by Johnny on 3/1/2017.
  */
@@ -19,5 +21,16 @@ public class MaxSliceSum {
             msf = Math.max(msf, meh);
         }
         return (int) msf;
+    }
+
+    public int solutionB(int[] A) {
+        int[] K = new int[A.length];
+        K[0] = A[0];
+        for (int i = 1; i < A.length; i++) {
+            int s = Math.max(K[i - 1], 0) + A[i];
+            K[i] = s;
+        }
+        Arrays.sort(K);
+        return K[K.length - 1];
     }
 }
